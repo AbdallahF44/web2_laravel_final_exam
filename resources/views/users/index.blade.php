@@ -39,13 +39,17 @@
             <td>{{ $user->email }}</td>
             <td>{{ $user->mobile }}</td>
             <td>{{ $user->address }}</td>
+{{--            <td>--}}
+{{--                <form action="{{ route('users.delete',$user->id) }}" method="Post">--}}
+{{--                    <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>--}}
+{{--                    @csrf--}}
+{{--                    @method('DELETE')--}}
+{{--                    <button type="submit" class="btn btn-danger">Delete</button>--}}
+{{--                </form> </td>--}}
             <td>
-                <form action="{{ route('users.destroy',$user->id) }}" method="Post">
                     <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form> </td>
+                    <a class="btn btn-danger" href="{{ route('users.delete',$user->id) }}">Delete</a>
+                 </td>
         </tr>
     @endforeach
     </tbody>

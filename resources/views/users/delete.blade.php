@@ -11,17 +11,17 @@
 </head>
 <body>
 <div class="container mt-2">
-    <form action="{{ route('users.destroy',$user->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('users.destroy',$id) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
-
-        <br><br>
+        @method('DELETE')<br>
+        <h2>Are You Sure?</h2>
+        <br>
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Delete</button>
         </div>
-{{--        <div class="col-12">--}}
-{{--            <a href="{{route('back')}}" class="btn btn-primary">Back</a>--}}
-{{--        </div>--}}
+        <div class="col-12">
+            <a href="{{route('back')}}" class="btn btn-primary">Back</a>
+        </div>
 
     </form>
 </div>

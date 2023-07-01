@@ -76,16 +76,20 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
+        User::destroy($id);
         return redirect()->route('users.index');
     }
 
-    public function delete(User $user)
+    public function delete($id)
     {
         $title = 'Final Exam | Delete User';
-        return view('users.edit', compact('user', 'title'));
+        return view('users.delete', compact('id', 'title'));
+    }
+   public function back(User $user)
+    {
+        return redirect()->route('users.index');
     }
 
 
